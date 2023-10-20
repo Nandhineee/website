@@ -1,0 +1,114 @@
+<form (ngSubmit)="onSubmit(regform)" #regform="ngForm">
+  <div class="align-middle">
+    <h1 class="text-center mt-10 mb-5">SPECS MAKER</h1>
+    <div class="container col-lg-4">
+      <div class="head h-25 mt-3">
+        <h2 class="text-center mb-5">CREATE ACCOUNT</h2>
+      </div>
+      <div class="form text-center">
+        <label for="email">NAME:</label>
+        <input
+          type="text"
+          class="rounded-3 mx-4 my-3 form-control"
+          name="name"
+          ngModel
+          required
+          #modelName="ngModel"
+          [ngClass]="modelName.invalid && modelName.dirty ? 'is-invalid' : ''"
+        />
+
+        <div class="form text-center">
+          <label for="email">EMAIL:</label>
+          <input
+            type="email"
+            class="rounded-3 mx-4 my-3 form-control"
+            name="email"
+            ngModel
+            required
+            email
+            #modelEmail="ngModel"
+            [ngClass]="
+              modelEmail.invalid && modelEmail.touched ? 'is-invalid' : ''
+            "
+          />
+          <div
+            *ngIf="modelEmail.invalid && modelEmail.touched"
+            class="invalid-feedback"
+          >
+            please enter the valid mail
+          </div>
+        </div>
+
+        <div class="form text-center">
+          <label for="pwd">PASSWORD:</label>
+          <input
+            type="password"
+            class="rounded-3 mx-4 my-3 form-control"
+            name="password"
+            ngModel
+            required
+            minlength="3"
+            #modelPassword="ngModel"
+            [ngClass]="
+              modelPassword.invalid && modelPassword.dirty ? 'is-invalid' : ''
+            "
+          />
+          <div
+            *ngIf="modelPassword.errors?.['required']&& modelEmail.dirty"
+            class="invalid-feedback"
+          >
+            please enter the valid password
+          </div>
+          <div
+            *ngIf="modelPassword.errors?.['minlength']"
+            class="invalid-feedback"
+          >
+            please enter atleast
+            {{modelPassword.errors?.['minlength']?.['requiredLength']}}
+            characters
+          </div>
+        </div>
+
+        <div class="form text-center">
+          <label for="pwd"> CONFIRM PASSWORD:</label>
+          <input
+            type="password"
+            class="rounded-3 mx-4 my-3 form-control"
+            name="password1"
+            ngModel
+            required
+            minlength="3"
+            #modelPassword1="ngModel"
+            [ngClass]="
+              modelPassword1.invalid && modelPassword1.dirty ? 'is-invalid' : ''
+            "
+          />
+          <div
+            *ngIf="modelPassword1.errors?.['required']&& modelEmail.dirty"
+            class="invalid-feedback"
+          >
+            please enter the valid password
+          </div>
+          <div
+            *ngIf="modelPassword.value !== modelPassword1.value"
+            class="text-danger"
+          >
+            Passwords do not match
+          </div>
+        </div>
+        <div class="form-outline">
+
+          <p class="text-danger">{{error}}</p>
+
+          <button
+            type="submit"
+            class="btn bg-primary-subtle text-emphasis-primary rounded-5 w-25 mx-5 m-lg-5"
+            [disabled]="!regform.valid"
+          >
+            Sign In
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

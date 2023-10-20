@@ -1,0 +1,33 @@
+
+<div>
+  <p class="fs-1 text-center">Cart Items</p>
+</div>
+
+
+
+<table class="table m-lg-5" >
+  <thead>
+    <tr>
+      <th scope="col">Product Name</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price</th>
+      <th scope="col">Total</th>
+    </tr>
+  </thead>
+  <!-- <div
+      *ngFor="let load of Loader"
+      class="d-flex rounded mb-3"> -->
+  <tbody *ngFor="let load of Loader">
+    
+    <tr>
+      <td scope="col">{{ load.title }}</td>
+      <td scope="col">{{ load.count }}</td>
+      <td scope="col">{{ load.price }}</td>
+      <td scope="col">{{ load.price! * load.count! }}</td>
+      
+    </tr>
+  </tbody>
+  <!-- </div> -->
+</table>
+<p>Total:<span id="total">0</span></p>
+<button class="btn btn-primary" (click)="placeOrder()">Checkout</button>

@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <!-- <img src="../user/images/shop.jpg" alt="logo" class="logo" /> -->
+    <h3>Specs Maker</h3>
+    <a
+      class="link text-success"
+      routerLink="/home"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      ><span class="h5">H</span>ome</a
+    >
+
+    <div>
+      <a routerLink="/order" routerLinkActive="active" class="p-3"
+        ><span class="h5">O</span>rder</a
+      >
+      <a routerLink="/cart" routerLinkActive="active" class="p-3"
+        ><span class="h5">Cart</span> {{getCount() > 0 ? getCount(): ""}}</a
+      >
+      <button class="btn btn-outline-success" type="submit">
+        <a (click)="logout()"
+          >logout</a
+        >
+      </button>
+    </div>
+  </div>
+</nav>

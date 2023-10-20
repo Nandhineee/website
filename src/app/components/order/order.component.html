@@ -1,0 +1,26 @@
+  <body class="overflow-x-hidden">
+<div>
+  <p class="fs-1 text-center">Order Items</p>
+</div>
+
+<table class="table m-lg-5">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Title</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let user of Loader">
+    <div
+      *ngFor="let order of user.cart"
+    >
+      <td scope="col">{{ order.id}}</td>
+      <td scope="col">{{ order.title}}</td>
+      <td scope="col">{{ order.price}}</td>
+
+    </div>
+  </tbody>
+</table>
+</body>
+
