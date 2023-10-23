@@ -16,7 +16,7 @@ export class RegisterComponent {
     for(let u of users) {
       if(u.email === regform.value.email){
         this.error="This mail is already used!!!!";
-        this.router.navigate([''],{replaceUrl:true});
+        this.router.navigate(['/login'],{replaceUrl:true});
 
       }
       else{
