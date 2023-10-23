@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { StorageService } from './services/storage.service';
 import { AuthService } from './services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
+import { IntroComponent } from './components/intro/intro.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     NotFoundComponent,
     OrderComponent,
     RegisterComponent,
-    CartComponent
+    CartComponent,
+    IntroComponent
   ],
   imports: [
     BrowserModule,

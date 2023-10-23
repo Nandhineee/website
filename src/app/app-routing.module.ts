@@ -7,10 +7,12 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { authGuard } from './common/auth.guard';
+import { IntroComponent } from './components/intro/intro.component';
 
 const routes: Routes = [
 { path: "home", component: HomeComponent },
-{path:"",component: LoginComponent},
+{path:"",component: IntroComponent},
+{path:"login",component: LoginComponent},
 { path: "cart", component: CartComponent, canActivate:[authGuard] },
 { path: "order", component: OrderComponent },
 { path: "register", component: RegisterComponent },

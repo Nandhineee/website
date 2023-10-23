@@ -64,7 +64,7 @@
     </button>
   </div> 
 
-<div class="overflow-x-hidden">
+<div class="overflow-x-hidden"> 
   <h3 class="text-center mt-5 fs-3" style="color: gray">
     FIND THE PERFECT FIT
   </h3>
@@ -72,7 +72,7 @@
   <div class="container">
     <p class="fs-3" style="color: brown">Products</p>
     <!-- Products starts here -->
-    <div class="row" id="productsRow">
+    <div class="row">
       <!-- Products ends here -->
     </div>
   </div>
@@ -80,20 +80,20 @@
 <div class="row">
     <div class="col-3" *ngFor="let product of products">
       <div
-        class="card mt-5 m-lg-5"
+        class="card mt-5 "
         style="width: 300px; height: 400px; background-color: gray; align-items: center;"
       >
         <img
-        style="height: 150px; width: 150px;margin:0px;"
+        style="height: 140px; width: 290px;margin:0px;"
         src="{{product.image}}"
           class="top"
           alt="Glass"
         />
-        <div class="card-body" >
+        <div class="card-body" style="height: 260px;">
           <p>{{product.title}}</p>
           <p>Black Round Women Glass</p>
-          <p class="fs-2">{{product.price}}</p>
-          <button class="btn btn-success mb-2" (click)="addToCart(product.id)"
+          <p class="fs-2">₹{{product.price}}</p>
+          <button class="btn btn-success mb-10%" (click)="addToCart(product.id)"
             >Add a cart</button
           >
         </div>
@@ -104,7 +104,7 @@
     <!-- Footer -->
     <footer
       class="text-center text-lg-start text-white"
-      style="background-color: gray; width: 100%; bottom: 0"
+      style="background-color: gray; width: 100%; margin-top: 5%;"
     >
       <!-- Section: Social media -->
       <section
@@ -240,4 +240,5 @@
 
     <!-- End of .container -->
   </div>
-</div>
+  </div>
+

@@ -3,7 +3,7 @@
   <p class="fs-1 text-center">Order Items</p>
 </div>
 
-<table class="table m-lg-5">
+<table class="table">
   <thead>
     <tr>
       <th scope="col">Id</th>
@@ -11,13 +11,13 @@
       <th scope="col">Price</th>
     </tr>
   </thead>
-  <tbody *ngFor="let user of Loader">
+  <tbody *ngFor="let user of Loader" style="flex-direction: row;">
     <div
       *ngFor="let order of user.cart"
     >
-      <td scope="col">{{ order.id}}</td>
-      <td scope="col">{{ order.title}}</td>
-      <td scope="col">{{ order.price}}</td>
+      <th >{{ order.id}}</th>
+      <th >{{ order.title}}</th>
+      <th >{{ order.price}}</th>
 
     </div>
   </tbody>
